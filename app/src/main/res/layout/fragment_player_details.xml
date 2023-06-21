@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.fragment.PlayerDetailsFragment">
+
+        <ImageView
+            android:id="@+id/iv_player"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/icon_image_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_player_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/player_name"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_country"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_player" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/country_name"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_player"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_player" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_player_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_player">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_personal_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/personal_information"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_player_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_00"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="60dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_personal_info">
+
+                    <TextView
+                        android:id="@+id/tv_title_first_name"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/first_name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_first_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_first_name"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_last_name"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/first_name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_first_name" />
+
+                    <TextView
+                        android:id="@+id/tv_last_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_last_name"
+                        app:layout_constraintTop_toBottomOf="@id/tv_first_name" />
+
+                    <TextView
+                        android:id="@+id/tv_age_title"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/age"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_last_name" />
+
+                    <TextView
+                        android:id="@+id/tv_dob"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_age_title"
+                        app:layout_constraintTop_toBottomOf="@id/tv_last_name" />
+
+                    <TextView
+                        android:id="@+id/tv_title_gender"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/gender"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_dob" />
+
+                    <TextView
+                        android:id="@+id/tv_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_gender"
+                        app:layout_constraintTop_toBottomOf="@id/tv_dob" />
+
+                    <TextView
+                        android:id="@+id/tv_title_current_team"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/team"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+                    <TextView
+                        android:id="@+id/tv_current_team"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_current_team"
+                        app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+                    <TextView
+                        android:id="@+id/tv_title_player_position"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/position"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_current_team" />
+
+                    <TextView
+                        android:id="@+id/tv_player_position"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_player_position"
+                        app:layout_constraintTop_toBottomOf="@id/tv_current_team" />
+
+                    <TextView
+                        android:id="@+id/tv_player_batting_style"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_player_batting_style"
+                        app:layout_constraintTop_toBottomOf="@id/tv_player_position" />
+
+                    <TextView
+                        android:id="@+id/tv_title_player_batting_style"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/batting_style"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_player_position" />
+
+                    <TextView
+                        android:id="@+id/tv_title_player_bowling_style"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/bowling_style"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_player_batting_style" />
+
+                    <TextView
+                        android:id="@+id/tv_player_bowling_style"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:padding="3dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_player_bowling_style"
+                        app:layout_constraintTop_toBottomOf="@id/tv_player_batting_style" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_player_career"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_player_info">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_career_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/career"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:background="@color/olive_light_00"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_career_info">
+
+                    <TextView
+                        android:id="@+id/tv_batting"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/selected"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/batting"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_bowling"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_bowling"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/non_selected"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/bowling"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_batting"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_batting"
+                        app:layout_constraintTop_toTopOf="@id/tv_batting" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_batting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_batting">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/format"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/m"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/r"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_best_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/best"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/sr"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_fifty"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_50"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_hundred"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_100"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_t20_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/t20"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_match"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_best_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_fifties"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20_hundreds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_t20i_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/t20i"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_match"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_best_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_fifties"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_t20i_hundreds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_odi_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/odi"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_match"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_best_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_fifties"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_odi_hundreds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_test_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/test"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_match"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_best_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_fifties"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_test_hundreds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_bowling"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="150dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_batting">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/format"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/m"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/r"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/w"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_economy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/econ"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_avg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/avg"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/sr"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_five_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_5w"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/t20"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_economy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_avg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20_five_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/t20i"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_economy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_avg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_t20i_five_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/odi"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_economy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_avg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_odi_five_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/gray_light_0_0"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_format"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:text="@string/test"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_match"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_run"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_economy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_avg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/zero_pont_zero"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_test_five_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_0"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

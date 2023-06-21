@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.HomeFragment"
+        android:label="Crick Info"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_fixturesFragment"
+            app:destination="@id/fixturesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fixturesFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.FixturesFragment"
+        android:label="Matches"
+        tools:layout="@layout/fragment_fixtures">
+        <action
+            android:id="@+id/action_fixturesFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_fixturesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_fixturesFragment_to_liveMatchFragment"
+            app:destination="@id/liveMatchFragment" />
+        <action
+            android:id="@+id/action_fixturesFragment_to_matchDetailsFragment"
+            app:destination="@id/matchDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_fixturesFragment"
+            app:destination="@id/fixturesFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/upcomingMatchFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.UpcomingMatchFragment"
+        android:label="Upcoming Match"
+        tools:layout="@layout/fragment_upcoming_match">
+        <action
+            android:id="@+id/action_upcomingMatchFragment_to_recentMatchFragment"
+            app:destination="@id/recentMatchFragment" />
+        <action
+            android:id="@+id/action_upcomingMatchFragment_to_liveMatchFragment"
+            app:destination="@id/liveMatchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/liveMatchFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.LiveMatchFragment"
+        android:label="Live Match"
+        tools:layout="@layout/fragment_live_match">
+        <action
+            android:id="@+id/action_liveMatchFragment_to_upcomingMatchFragment"
+            app:destination="@id/upcomingMatchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recentMatchFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.RecentMatchFragment"
+        android:label="Recent Match"
+        tools:layout="@layout/fragment_recent_match">
+        <action
+            android:id="@+id/action_recentMatchFragment_to_upcomingMatchFragment"
+            app:destination="@id/upcomingMatchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchDetailsFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.MatchDetailsFragment"
+        android:label="Match"
+        tools:layout="@layout/fragment_match_details">
+        <argument
+            android:name="match"
+            app:argType="com.kamrulhasan.crickinfo.model.fixture.FixturesData" />
+        <action
+            android:id="@+id/action_matchDetailsFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.WebViewFragment"
+        android:label="Cricket News"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="newsUrl"
+            android:defaultValue='""'
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.PlayerDetailsFragment"
+        android:label="Player Details"
+        tools:layout="@layout/fragment_player_details">
+        <argument
+            android:name="player_id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playersFragment"
+        android:name="com.kamrulhasan.crickinfo.ui.fragment.PlayersFragment"
+        android:label="Players"
+        tools:layout="@layout/fragment_players" />
+</navigation>

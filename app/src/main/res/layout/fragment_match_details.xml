@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        tools:context=".ui.fragment.MatchDetailsFragment">
+
+        <TextView
+            android:id="@+id/tv_league"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/t20i"
+            android:textColor="@color/gray_dark"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_time_count_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/green_dark"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="hh:mm:ss" />
+
+        <ImageView
+            android:id="@+id/iv_team1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/icon_image_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingBottom="20dp"
+            android:text="@string/team"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/iv_team1"
+            app:layout_constraintStart_toStartOf="@id/iv_team1"
+            app:layout_constraintTop_toBottomOf="@id/iv_team1" />
+
+        <TextView
+            android:id="@+id/tv_score_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-60dp"
+            android:text="@string/_0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_team1"
+            app:layout_constraintStart_toEndOf="@id/iv_team1"
+            app:layout_constraintTop_toTopOf="@id/iv_team1" />
+
+        <TextView
+            android:id="@+id/tv_wicket_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/tv_score_team1"
+            app:layout_constraintTop_toTopOf="@id/tv_score_team1" />
+
+        <TextView
+            android:id="@+id/tv_over_team1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_wicket_team1"
+            app:layout_constraintStart_toStartOf="@id/tv_score_team1"
+            app:layout_constraintTop_toBottomOf="@id/tv_score_team1" />
+
+        <ImageView
+            android:id="@+id/iv_team2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/icon_image_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_team1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_team2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/team"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/iv_team2"
+            app:layout_constraintStart_toStartOf="@id/iv_team2"
+            app:layout_constraintTop_toBottomOf="@id/iv_team1" />
+
+        <TextView
+            android:id="@+id/tv_day_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textColor="@color/olive"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/iv_team2"
+            app:layout_constraintStart_toStartOf="@id/iv_team1"
+            app:layout_constraintTop_toBottomOf="@id/tv_team2" />
+
+        <TextView
+            android:id="@+id/tv_score_team2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_wicket_team2"
+            app:layout_constraintTop_toTopOf="@id/tv_wicket_team2" />
+
+        <TextView
+            android:id="@+id/tv_wicket_team2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/_0"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_score_team1"
+            app:layout_constraintEnd_toStartOf="@id/iv_team2"
+            app:layout_constraintTop_toTopOf="@id/tv_score_team1" />
+
+        <TextView
+            android:id="@+id/tv_over_team2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_wicket_team2"
+            app:layout_constraintStart_toStartOf="@id/tv_score_team2"
+            app:layout_constraintTop_toBottomOf="@id/tv_score_team2" />
+
+        <!--     Match Information -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_match_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_team1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_match_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/match_info"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_match_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_00"
+                    android:paddingStart="5dp"
+                    android:paddingBottom="60dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_match_info">
+
+                    <TextView
+                        android:id="@+id/tv_title_match_notes"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/notes"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tv_match_notes" />
+
+                    <TextView
+                        android:id="@+id/tv_match_notes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_match_notes"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_series"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/series"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_notes" />
+
+                    <TextView
+                        android:id="@+id/tv_round"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_series"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_notes" />
+
+                    <TextView
+                        android:id="@+id/tv_title_venues"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/venue"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_round" />
+
+                    <TextView
+                        android:id="@+id/tv_venues"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_series"
+                        app:layout_constraintTop_toBottomOf="@id/tv_round" />
+
+                    <TextView
+                        android:id="@+id/tv_title_venues_city"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/city"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venues" />
+
+                    <TextView
+                        android:id="@+id/tv_venues_city"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_series"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venues" />
+
+                    <TextView
+                        android:id="@+id/tv_title_match_date"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/date"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venues_city" />
+
+                    <TextView
+                        android:id="@+id/tv_match_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_series"
+                        app:layout_constraintTop_toBottomOf="@id/tv_venues_city" />
+
+                    <TextView
+                        android:id="@+id/tv_title_match_time"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/time"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_date" />
+
+                    <TextView
+                        android:id="@+id/tv_match_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_match_time"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_date" />
+
+                    <TextView
+                        android:id="@+id/tv_title_status"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/status"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_time" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_status"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_time" />
+
+                    <TextView
+                        android:id="@+id/tv_title_toss_won_team"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/toss_won"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+                    <TextView
+                        android:id="@+id/tv_toss_won_team"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_toss_won_team"
+                        app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+                    <TextView
+                        android:id="@+id/tv_title_elected"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/elected"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_toss_won_team" />
+
+                    <TextView
+                        android:id="@+id/tv_elected"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_toss_won_team"
+                        app:layout_constraintTop_toBottomOf="@id/tv_toss_won_team" />
+
+                    <TextView
+                        android:id="@+id/tv_title_match_won_team"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/winner"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_elected" />
+
+                    <TextView
+                        android:id="@+id/tv_match_won_team"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_toss_won_team"
+                        app:layout_constraintTop_toBottomOf="@id/tv_elected" />
+
+                    <TextView
+                        android:id="@+id/tv_title_man_of_the_match"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/man_of_match"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_won_team" />
+
+                    <TextView
+                        android:id="@+id/tv_man_of_the_match"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_man_of_the_match"
+                        app:layout_constraintTop_toBottomOf="@id/tv_match_won_team" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--        Team ScoreCard    -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_match_scorecard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_match_info">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_team_score_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/scorecard"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_scorecard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_00"
+                    android:paddingBottom="60dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_team_score_card">
+
+                    <TextView
+                        android:id="@+id/tv_card_inning_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/selected"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/_1st_inning"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_card_inning_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_card_inning_2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/non_selected"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/_2nd_inning"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_card_inning_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_card_inning_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_card_inning_1" />
+
+                    <TextView
+                        android:id="@+id/tv_batting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:padding="5dp"
+                        android:text="@string/batting"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_card_inning_1" />
+
+                    <TextView
+                        android:id="@+id/tv_batting_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/non_selected"
+                        android:padding="5dp"
+                        android:text="@string/pending"
+                        android:textColor="@color/olive_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tv_batting"
+                        app:layout_constraintTop_toBottomOf="@id/tv_card_inning_1" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/layout_batting_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/item_shape"
+                        android:elevation="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_batting_team">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_player_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="4"
+                                android:padding="5dp"
+                                android:text="@string/name"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_runs"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/r"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_balls"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/b"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_four_s"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_4s"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_six_s"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/_6s"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_stick_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:gravity="center"
+                                android:text="@string/sr"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_batting_scorecard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:padding="5dp"
+                        app:layoutManager="LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_batting_title" />
+
+                    <TextView
+                        android:id="@+id/tv_team_extra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/extra"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/recycler_view_batting_scorecard" />
+
+                    <!--   Bowling section -->
+                    <TextView
+                        android:id="@+id/tv_bowling"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:padding="5dp"
+                        android:text="@string/bowling"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_team_extra" />
+
+                    <TextView
+                        android:id="@+id/tv_bowling_team"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/non_selected"
+                        android:padding="5dp"
+                        android:text="@string/pending"
+                        android:textColor="@color/olive_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tv_bowling"
+                        app:layout_constraintTop_toBottomOf="@id/tv_team_extra" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/layout_bowling_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/item_shape"
+                        android:elevation="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_bowling">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bowling_player_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="20dp"
+                                android:layout_weight="4"
+                                android:padding="5dp"
+                                android:text="@string/name"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_over"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/o"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_bowling_runs"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/r"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wicket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/w"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_economy_rate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:gravity="center"
+                                android:text="@string/econ"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_bowling_scorecard"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:padding="5dp"
+                        app:layoutManager="LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layout_bowling_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--  Team Squad  -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_match_lineup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_match_scorecard">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_team_squad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/team_squad"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_team_squad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_00"
+                    android:paddingBottom="50dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_team_squad">
+
+                    <TextView
+                        android:id="@+id/tv_lineup_team_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/selected"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/team1"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_lineup_team_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_lineup_team_2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/non_selected"
+                        android:gravity="center"
+                        android:text="@string/team2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_lineup_team_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_lineup_team_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_lineup_team_1" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_team_squad"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:padding="5dp"
+                        app:layoutManager="LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_lineup_team_1" />
+
+                    <TextView
+                        android:id="@+id/tv_na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/not_available"
+                        android:textSize="16sp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/recycler_view_team_squad" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--   Match Umpire     -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_match_umpire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/item_shape"
+            android:elevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_view_match_lineup">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_match_umpire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_0"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/match_umpire"
+                    android:textColor="@color/olive_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="-29dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_match_umpire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/olive_light_00"
+                    android:paddingStart="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="50dp">
+
+                    <TextView
+                        android:id="@+id/tv_title_first_umpire"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/first_umpire"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_first_umpire"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_first_umpire"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_second_umpire"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/second_umpire"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_first_umpire" />
+
+                    <TextView
+                        android:id="@+id/tv_second_umpire"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_second_umpire"
+                        app:layout_constraintTop_toBottomOf="@id/tv_first_umpire" />
+
+                    <TextView
+                        android:id="@+id/tv_title_tv_umpire"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/third_umpire"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_second_umpire" />
+
+                    <TextView
+                        android:id="@+id/tv_tv_umpire"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_tv_umpire"
+                        app:layout_constraintTop_toBottomOf="@id/tv_second_umpire" />
+
+                    <TextView
+                        android:id="@+id/tv_title_match_referee"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/referee"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_tv_umpire" />
+
+                    <TextView
+                        android:id="@+id/tv_referee"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/na"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_title_match_referee"
+                        app:layout_constraintTop_toBottomOf="@id/tv_tv_umpire" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

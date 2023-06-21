@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/icon_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/fixturesFragment"
+        android:icon="@drawable/icon_bat_ball"
+        android:title="@string/matches" />
+
+    <item
+        android:id="@+id/playersFragment"
+        android:icon="@drawable/icon_person"
+        android:title="@string/players" />
+
+    <item
+        android:id="@+id/newsFragment"
+        android:icon="@drawable/icon_news"
+        android:title="@string/news" />
+
+</menu>
